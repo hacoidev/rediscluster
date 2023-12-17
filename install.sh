@@ -6,7 +6,7 @@ if [ -f .env ]; then
     export $(cat .env | grep -v '#' | awk '/=/ {print $1}')
 fi
 
-for i in {$PORT_FROM..$PORT_TO}
+for (( i=$PORT_FROM; i<=$PORT_TO; i++ ))
 do
    mkdir -p ${cwd}/cluster/${i}
    chown -R redis:redis ${cwd}/cluster/

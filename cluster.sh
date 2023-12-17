@@ -4,7 +4,7 @@ if [ -f .env ]; then
 fi
 
 init_command="redis-cli -p $PORT_FROM -a $REDIS_PASSWORD --cluster create "
-for i in {$PORT_FROM..$PORT_TO}
+for (( i=$PORT_FROM; i<=$PORT_TO; i++ ))
 do
 init_command=$init_command"127.0.0.1:$i "
 done

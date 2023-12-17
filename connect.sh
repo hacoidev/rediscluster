@@ -8,7 +8,7 @@ fi
 for vps in $VPSS
 do
     echo "Installing $vps"
-    for port in {$PORT_FROM..$PORT_TO}
+    for (( port=$PORT_FROM; port<=$PORT_TO; port++ ))
     do
     echo "Connect redis on $vps:$port"
     redis-cli -p $PORT_FROM -a $REDIS_PASSWORD -c cluster meet $vps $port
