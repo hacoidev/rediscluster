@@ -6,5 +6,5 @@ fi
 
 for (( i=$PORT_FROM; i<=$PORT_TO; i++ ))
 do
-   systemctl disble --now redis_${i}.service
+   systemctl disable --now redis_${i}.service
 done
