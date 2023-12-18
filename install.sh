@@ -19,6 +19,8 @@ do
    echo "cluster-config-file ${cwd}/cluster/${i}/nodes.conf" >> ${cwd}/cluster/${i}/redis.conf
    echo "cluster-node-timeout 5000" >> ${cwd}/cluster/${i}/redis.conf
    echo "appendonly yes" >> ${cwd}/cluster/${i}/redis.conf
+   echo "tcp-backlog 511" >> ${cwd}/cluster/${i}/redis.conf
+   echo "maxclients 65503" >> ${cwd}/cluster/${i}/redis.conf
    echo "pidfile ${cwd}/cluster/${i}/redis.pid" >> ${cwd}/cluster/${i}/redis.conf
    echo "logfile ${cwd}/cluster/${i}/redis.log" >> ${cwd}/cluster/${i}/redis.conf
 
