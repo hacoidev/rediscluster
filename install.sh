@@ -23,6 +23,24 @@ do
    echo "maxclients 65503" >> ${cwd}/cluster/${i}/redis.conf
    echo "pidfile ${cwd}/cluster/${i}/redis.pid" >> ${cwd}/cluster/${i}/redis.conf
    echo "logfile ${cwd}/cluster/${i}/redis.log" >> ${cwd}/cluster/${i}/redis.conf
+   echo "hash-max-ziplist-entries 512" >> ${cwd}/cluster/${i}/redis.conf
+   echo "hash-max-ziplist-value 64" >> ${cwd}/cluster/${i}/redis.conf
+   echo "list-max-ziplist-size -2" >> ${cwd}/cluster/${i}/redis.conf
+   echo "list-compress-depth 0" >> ${cwd}/cluster/${i}/redis.conf
+   echo "set-max-intset-entries 512" >> ${cwd}/cluster/${i}/redis.conf
+   echo "zset-max-ziplist-entries 128" >> ${cwd}/cluster/${i}/redis.conf
+   echo "zset-max-ziplist-value 64" >> ${cwd}/cluster/${i}/redis.conf
+   echo "hll-sparse-max-bytes 3000" >> ${cwd}/cluster/${i}/redis.conf
+   echo "stream-node-max-bytes 4096" >> ${cwd}/cluster/${i}/redis.conf
+   echo "stream-node-max-entries 100" >> ${cwd}/cluster/${i}/redis.conf
+   echo "activerehashing yes" >> ${cwd}/cluster/${i}/redis.conf
+   echo "client-output-buffer-limit normal 0 0 0" >> ${cwd}/cluster/${i}/redis.conf
+   echo "client-output-buffer-limit replica 256mb 64mb 60" >> ${cwd}/cluster/${i}/redis.conf
+   echo "client-output-buffer-limit pubsub 32mb 8mb 60" >> ${cwd}/cluster/${i}/redis.conf
+   echo "hz 10" >> ${cwd}/cluster/${i}/redis.conf
+   echo "dynamic-hz yes" >> ${cwd}/cluster/${i}/redis.conf
+   echo "aof-rewrite-incremental-fsync yes" >> ${cwd}/cluster/${i}/redis.conf
+   echo "rdb-save-incremental-fsync yes" >> ${cwd}/cluster/${i}/redis.conf
 
 
    ## Create service file
