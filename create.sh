@@ -41,6 +41,7 @@ do
    echo "dynamic-hz yes" >> ${cwd}/cluster/${i}/redis.conf
    echo "aof-rewrite-incremental-fsync yes" >> ${cwd}/cluster/${i}/redis.conf
    echo "rdb-save-incremental-fsync yes" >> ${cwd}/cluster/${i}/redis.conf
+   echo "auto-aof-rewrite-percentage 0" >> ${cwd}/cluster/${i}/redis.conf
 
 
    ## Create service file
